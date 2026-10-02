@@ -1,0 +1,1774 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta
+    name="description"
+    content="DI.Glass — фибробетонные фасадные панели в Алматы. Каталог, расчёт стоимости, доставка и монтаж."
+  />
+
+  <meta name="theme-color" content="#090909" />
+
+  <title>DI.Glass — Фасадные панели в Алматы</title>
+
+  <style>
+    :root {
+      --bg: #090909;
+      --bg2: #111111;
+      --card: #151515;
+      --gold: #c9a45c;
+      --gold-light: #e1c27b;
+      --white: #f5f3ed;
+      --muted: #aaa7a0;
+      --line: rgba(201, 164, 92, .22);
+      --green: #25d366;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--white);
+      line-height: 1.5;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    select {
+      font-family: inherit;
+    }
+
+    .container {
+      width: min(1160px, 92%);
+      margin: auto;
+    }
+
+    /* =========================
+       HEADER
+    ========================= */
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(9, 9, 9, .88);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255, 255, 255, .06);
+    }
+
+    .nav {
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .logo {
+      font-weight: 800;
+      letter-spacing: 2px;
+      font-size: 21px;
+    }
+
+    .logo span {
+      color: var(--gold);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      font-size: 14px;
+      color: #ddd;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold-light);
+    }
+
+    .nav-whatsapp {
+      background: var(--gold);
+      color: #090909;
+      padding: 11px 18px;
+      border-radius: 5px;
+      font-weight: 700;
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      min-height: 760px;
+      padding-top: 76px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+
+      background:
+        radial-gradient(
+          circle at 80% 35%,
+          rgba(201, 164, 92, .14),
+          transparent 30%
+        ),
+        linear-gradient(135deg, #080808 0%, #15130f 100%);
+    }
+
+    .hero:after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: .18;
+
+      background-image:
+        linear-gradient(
+          45deg,
+          transparent 45%,
+          rgba(201, 164, 92, .18) 46%,
+          transparent 47%
+        ),
+        linear-gradient(
+          -45deg,
+          transparent 45%,
+          rgba(255, 255, 255, .04) 46%,
+          transparent 47%
+        );
+
+      background-size: 90px 90px;
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 760px;
+    }
+
+    .eyebrow {
+      color: var(--gold-light);
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-size: 12px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: clamp(42px, 7vw, 78px);
+      line-height: 1.02;
+      letter-spacing: -2px;
+      margin-bottom: 25px;
+    }
+
+    h1 span {
+      color: var(--gold-light);
+    }
+
+    .hero p {
+      max-width: 650px;
+      font-size: 20px;
+      color: var(--muted);
+      margin-bottom: 35px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      padding: 0 25px;
+      border-radius: 5px;
+      border: 1px solid var(--gold);
+      font-weight: 700;
+      cursor: pointer;
+      transition: .25s;
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: #090909;
+    }
+
+    .btn-gold:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      color: var(--white);
+    }
+
+    .btn-outline:hover {
+      background: rgba(201, 164, 92, .1);
+    }
+
+    .hero-info {
+      display: flex;
+      gap: 35px;
+      margin-top: 55px;
+      color: #aaa;
+      font-size: 13px;
+    }
+
+    .hero-info strong {
+      display: block;
+      color: var(--gold-light);
+      margin-bottom: 4px;
+    }
+
+    /* =========================
+       SECTIONS
+    ========================= */
+
+    section {
+      padding: 95px 0;
+    }
+
+    .section-title {
+      margin-bottom: 45px;
+    }
+
+    .section-title small {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 11px;
+    }
+
+    .section-title h2 {
+      font-size: clamp(32px, 5vw, 50px);
+      margin-top: 10px;
+    }
+
+    .section-title p {
+      color: var(--muted);
+      max-width: 650px;
+      margin-top: 12px;
+    }
+
+    /* =========================
+       PRODUCTS
+    ========================= */
+
+    .products {
+      background: #0d0d0d;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .product {
+      background: var(--card);
+      border: 1px solid rgba(255, 255, 255, .07);
+      border-radius: 8px;
+      overflow: hidden;
+      transition: .3s;
+    }
+
+    .product:hover {
+      transform: translateY(-5px);
+      border-color: var(--line);
+    }
+
+    .texture {
+      height: 220px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      color: rgba(255, 255, 255, .25);
+      font-size: 45px;
+      font-weight: 900;
+    }
+
+    .texture.classic {
+      background:
+        repeating-linear-gradient(
+          90deg,
+          #777 0,
+          #777 2px,
+          #555 3px,
+          #777 7px
+        );
+    }
+
+    .texture.wild {
+      background:
+        radial-gradient(
+          circle at 20% 30%,
+          #777 0 5%,
+          transparent 6%
+        ),
+        radial-gradient(
+          circle at 70% 70%,
+          #888 0 6%,
+          transparent 7%
+        ),
+        #4e4e4e;
+
+      background-size: 70px 70px, 90px 90px;
+    }
+
+    .texture.turtle {
+      background:
+        radial-gradient(
+          ellipse at center,
+          #777 0 28%,
+          #444 29% 34%,
+          transparent 35%
+        );
+
+      background-size: 65px 55px;
+      background-color: #505050;
+    }
+
+    .texture.threed {
+      background:
+        linear-gradient(
+          135deg,
+          #777 25%,
+          #444 25%,
+          #444 50%,
+          #777 50%,
+          #777 75%,
+          #444 75%
+        );
+
+      background-size: 55px 55px;
+    }
+
+    .product-body {
+      padding: 22px;
+    }
+
+    .product-body h3 {
+      font-size: 22px;
+      margin-bottom: 6px;
+    }
+
+    .price {
+      color: var(--gold-light);
+      font-size: 20px;
+      font-weight: 800;
+      margin-bottom: 18px;
+    }
+
+    .select-product {
+      width: 100%;
+      border: 1px solid var(--gold);
+      background: transparent;
+      color: var(--white);
+      padding: 12px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    .select-product:hover {
+      background: var(--gold);
+      color: #111;
+    }
+
+    /* =========================
+       EXTRAS
+    ========================= */
+
+    .extras {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .extra {
+      background: var(--card);
+      border: 1px solid rgba(255, 255, 255, .07);
+      padding: 30px;
+      border-radius: 8px;
+    }
+
+    .extra h3 {
+      font-size: 24px;
+      margin-bottom: 8px;
+    }
+
+    .extra p {
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    .extra .extra-price {
+      color: var(--gold-light);
+      font-size: 22px;
+      font-weight: 800;
+    }
+
+    /* =========================
+       BENEFITS
+    ========================= */
+
+    .benefits {
+      background: #0d0d0d;
+    }
+
+    .benefit-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .benefit {
+      padding: 28px;
+      border-left: 1px solid var(--gold);
+      background: #121212;
+    }
+
+    .benefit-number {
+      color: var(--gold);
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+
+    .benefit h3 {
+      margin-bottom: 9px;
+    }
+
+    .benefit p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* =========================
+       CALCULATOR
+    ========================= */
+
+    .calculator-wrap {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 25px;
+      align-items: stretch;
+    }
+
+    .calculator,
+    .result {
+      background: #121212;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 32px;
+    }
+
+    .field {
+      margin-bottom: 22px;
+    }
+
+    .field label {
+      display: block;
+      color: #d5d2cc;
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    select,
+    input {
+      width: 100%;
+      height: 50px;
+      background: #090909;
+      color: var(--white);
+      border: 1px solid #333;
+      border-radius: 5px;
+      padding: 0 14px;
+      font-size: 16px;
+      outline: none;
+    }
+
+    select:focus,
+    input:focus {
+      border-color: var(--gold);
+    }
+
+    .radio-row {
+      display: flex;
+      gap: 10px;
+    }
+
+    .radio {
+      flex: 1;
+      position: relative;
+    }
+
+    .radio input {
+      position: absolute;
+      opacity: 0;
+    }
+
+    .radio span {
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #333;
+      border-radius: 5px;
+      cursor: pointer;
+      color: #aaa;
+    }
+
+    .radio input:checked + span {
+      border-color: var(--gold);
+      color: var(--gold-light);
+      background: rgba(201, 164, 92, .08);
+    }
+
+    .result {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      background:
+        radial-gradient(
+          circle at top right,
+          rgba(201, 164, 92, .13),
+          transparent 45%
+        ),
+        #121212;
+    }
+
+    .result-label {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .total {
+      font-size: clamp(38px, 5vw, 58px);
+      font-weight: 900;
+      color: var(--gold-light);
+      line-height: 1;
+      margin-bottom: 20px;
+    }
+
+    .calculation {
+      color: #aaa;
+      font-size: 14px;
+      border-top: 1px solid #292929;
+      padding-top: 18px;
+      margin-bottom: 25px;
+    }
+
+    .whatsapp-btn {
+      width: 100%;
+      background: var(--green);
+      color: #06140a;
+      border: 0;
+      min-height: 55px;
+      border-radius: 5px;
+      font-size: 16px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: .25s;
+    }
+
+    .whatsapp-btn:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.05);
+    }
+
+    .note {
+      color: #777;
+      font-size: 12px;
+      margin-top: 14px;
+    }
+
+    /* =========================
+       CTA
+    ========================= */
+
+    .cta {
+      padding: 70px 0;
+      background:
+        linear-gradient(
+          90deg,
+          #17130d,
+          #0c0c0c
+        );
+
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .cta-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .cta h2 {
+      font-size: clamp(28px, 4vw, 44px);
+    }
+
+    .cta p {
+      color: var(--muted);
+      margin-top: 8px;
+    }
+
+    /* =========================
+       CONTACTS
+    ========================= */
+
+    .contacts-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .contact-card {
+      background: #121212;
+      border: 1px solid rgba(255, 255, 255, .07);
+      padding: 30px;
+      border-radius: 8px;
+    }
+
+    .contact-card span {
+      color: var(--gold);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .contact-card h3 {
+      font-size: 24px;
+      margin-top: 8px;
+    }
+
+    .contact-card a:hover {
+      color: var(--gold-light);
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      padding: 30px 0;
+      border-top: 1px solid rgba(255, 255, 255, .07);
+      color: #777;
+      font-size: 13px;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 900px) {
+
+      .nav-links {
+        display: none;
+      }
+
+      .product-grid,
+      .benefit-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .calculator-wrap {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+
+      section {
+        padding: 70px 0;
+      }
+
+      .hero {
+        min-height: 700px;
+      }
+
+      .hero p {
+        font-size: 17px;
+      }
+
+      .hero-info {
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      .product-grid,
+      .benefit-grid,
+      .extras,
+      .contacts-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .texture {
+        height: 190px;
+      }
+
+      .calculator,
+      .result {
+        padding: 22px;
+      }
+
+      .cta-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+      }
+
+      .nav {
+        height: 68px;
+      }
+
+      .nav-whatsapp {
+        padding: 9px 13px;
+        font-size: 12px;
+      }
+
+      h1 {
+        letter-spacing: -1px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+  <div class="container nav">
+
+    <a href="#" class="logo">
+      DI<span>.GLASS</span>
+    </a>
+
+    <nav class="nav-links">
+      <a href="#catalog">Каталог</a>
+      <a href="#calculator">Рассчитать</a>
+      <a href="#contacts">Контакты</a>
+
+      <a
+        class="nav-whatsapp"
+        href="https://wa.me/77088008919"
+        target="_blank"
+        rel="noopener"
+      >
+        WhatsApp
+      </a>
+    </nav>
+
+  </div>
+</header>
+
+
+<main>
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+  <div class="container">
+
+    <div class="hero-content">
+
+      <div class="eyebrow">
+        DI.GLASS · ALMATY
+      </div>
+
+      <h1>
+        Фибробетонные<br>
+        <span>фасадные панели</span>
+      </h1>
+
+      <p>
+        Современные фасадные решения для домов,
+        коттеджей и коммерческих объектов в Алматы.
+        Производство, доставка и монтаж.
+      </p>
+
+      <div class="buttons">
+
+        <a href="#catalog" class="btn btn-gold">
+          Смотреть каталог
+        </a>
+
+        <a href="#calculator" class="btn btn-outline">
+          Рассчитать стоимость
+        </a>
+
+      </div>
+
+      <div class="hero-info">
+
+        <div>
+          <strong>Алматы</strong>
+          Производство и монтаж
+        </div>
+
+        <div>
+          <strong>4 коллекции</strong>
+          Фактурные панели
+        </div>
+
+        <div>
+          <strong>WhatsApp</strong>
+          Быстрая заявка
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     CATALOG
+========================= -->
+
+<section class="products" id="catalog">
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <small>01 / Каталог</small>
+
+      <h2>
+        Фасадные панели
+      </h2>
+
+      <p>
+        Выберите фактуру, которая подходит
+        вашему проекту.
+      </p>
+
+    </div>
+
+
+    <div class="product-grid">
+
+
+      <!-- CLASSIC -->
+
+      <article class="product">
+
+        <div class="texture classic">
+          CLASSIC
+        </div>
+
+        <div class="product-body">
+
+          <h3>
+            Классика
+          </h3>
+
+          <div class="price">
+            2 400 тг/м²
+          </div>
+
+          <button
+            class="select-product"
+            onclick="selectPanel('classic')"
+          >
+            Выбрать
+          </button>
+
+        </div>
+
+      </article>
+
+
+      <!-- WILD -->
+
+      <article class="product">
+
+        <div class="texture wild">
+          WILD
+        </div>
+
+        <div class="product-body">
+
+          <h3>
+            Дикий
+          </h3>
+
+          <div class="price">
+            2 500 тг/м²
+          </div>
+
+          <button
+            class="select-product"
+            onclick="selectPanel('wild')"
+          >
+            Выбрать
+          </button>
+
+        </div>
+
+      </article>
+
+
+      <!-- TURTLE -->
+
+      <article class="product">
+
+        <div class="texture turtle">
+          TURTLE
+        </div>
+
+        <div class="product-body">
+
+          <h3>
+            Черепашки
+          </h3>
+
+          <div class="price">
+            2 700 тг/м²
+          </div>
+
+          <button
+            class="select-product"
+            onclick="selectPanel('turtle')"
+          >
+            Выбрать
+          </button>
+
+        </div>
+
+      </article>
+
+
+      <!-- 3D -->
+
+      <article class="product">
+
+        <div class="texture threed">
+          3D
+        </div>
+
+        <div class="product-body">
+
+          <h3>
+            3D
+          </h3>
+
+          <div class="price">
+            2 800 тг/м²
+          </div>
+
+          <button
+            class="select-product"
+            onclick="selectPanel('3d')"
+          >
+            Выбрать
+          </button>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     EXTRAS
+========================= -->
+
+<section>
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <small>
+        02 / Комплектующие
+      </small>
+
+      <h2>
+        Дополнительные элементы
+      </h2>
+
+    </div>
+
+
+    <div class="extras">
+
+      <div class="extra">
+
+        <h3>
+          Оформления
+        </h3>
+
+        <p>
+          Декоративные элементы
+        </p>
+
+        <div class="extra-price">
+          750 тг / шт
+        </div>
+
+      </div>
+
+
+      <div class="extra">
+
+        <h3>
+          Угловые элементы
+        </h3>
+
+        <p>
+          Для аккуратного оформления углов фасада
+        </p>
+
+        <div class="extra-price">
+          1 300 тг / шт
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     BENEFITS
+========================= -->
+
+<section class="benefits">
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <small>
+        03 / Почему DI.Glass
+      </small>
+
+      <h2>
+        Фасад, который меняет внешний вид дома
+      </h2>
+
+    </div>
+
+
+    <div class="benefit-grid">
+
+
+      <div class="benefit">
+
+        <div class="benefit-number">
+          01
+        </div>
+
+        <h3>
+          Собственное производство
+        </h3>
+
+        <p>
+          Фибробетонные панели для современных
+          фасадов.
+        </p>
+
+      </div>
+
+
+      <div class="benefit">
+
+        <div class="benefit-number">
+          02
+        </div>
+
+        <h3>
+          Монтаж
+        </h3>
+
+        <p>
+          При необходимости организуем
+          профессиональный монтаж фасада.
+        </p>
+
+      </div>
+
+
+      <div class="benefit">
+
+        <div class="benefit-number">
+          03
+        </div>
+
+        <h3>
+          Расчёт
+        </h3>
+
+        <p>
+          Рассчитайте ориентировочную стоимость
+          материалов онлайн.
+        </p>
+
+      </div>
+
+
+      <div class="benefit">
+
+        <div class="benefit-number">
+          04
+        </div>
+
+        <h3>
+          Алматы
+        </h3>
+
+        <p>
+          Работаем с объектами в Алматы.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     CALCULATOR
+========================= -->
+
+<section id="calculator">
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <small>
+        04 / Расчёт
+      </small>
+
+      <h2>
+        Рассчитайте стоимость фасада
+      </h2>
+
+      <p>
+        Укажите параметры объекта —
+        сумма обновится автоматически.
+      </p>
+
+    </div>
+
+
+    <div class="calculator-wrap">
+
+
+      <!-- CALCULATOR -->
+
+      <div class="calculator">
+
+
+        <div class="field">
+
+          <label for="panel">
+            Тип панели
+          </label>
+
+          <select
+            id="panel"
+            onchange="calculate()"
+          >
+
+            <option value="classic">
+              Классика — 2 400 тг/м²
+            </option>
+
+            <option value="wild">
+              Дикий — 2 500 тг/м²
+            </option>
+
+            <option value="turtle">
+              Черепашки — 2 700 тг/м²
+            </option>
+
+            <option value="3d">
+              3D — 2 800 тг/м²
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <div class="field">
+
+          <label for="area">
+            Площадь, м²
+          </label>
+
+          <input
+            id="area"
+            type="number"
+            min="0"
+            placeholder="Например, 120"
+            oninput="calculate()"
+          />
+
+        </div>
+
+
+        <div class="field">
+
+          <label for="corners">
+            Угловые элементы, шт
+          </label>
+
+          <input
+            id="corners"
+            type="number"
+            min="0"
+            value="0"
+            oninput="calculate()"
+          />
+
+        </div>
+
+
+        <div class="field">
+
+          <label for="decorations">
+            Оформления, шт
+          </label>
+
+          <input
+            id="decorations"
+            type="number"
+            min="0"
+            value="0"
+            oninput="calculate()"
+          />
+
+        </div>
+
+
+        <div class="field">
+
+          <label>
+            Нужен монтаж?
+          </label>
+
+          <div class="radio-row">
+
+            <label class="radio">
+
+              <input
+                type="radio"
+                name="installation"
+                value="Да"
+                checked
+                onchange="calculate()"
+              />
+
+              <span>
+                Да
+              </span>
+
+            </label>
+
+
+            <label class="radio">
+
+              <input
+                type="radio"
+                name="installation"
+                value="Нет"
+                onchange="calculate()"
+              />
+
+              <span>
+                Нет
+              </span>
+
+            </label>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- RESULT -->
+
+      <div class="result">
+
+        <div class="result-label">
+          Ориентировочная стоимость
+        </div>
+
+        <div
+          class="total"
+          id="total"
+        >
+          0 тг
+        </div>
+
+        <div
+          class="calculation"
+          id="calculation"
+        >
+          Укажите площадь для расчёта.
+        </div>
+
+        <button
+          class="whatsapp-btn"
+          onclick="sendWhatsApp()"
+        >
+          Отправить заявку в WhatsApp
+        </button>
+
+        <div class="note">
+          Точная стоимость уточняется после
+          согласования параметров объекта.
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     CTA
+========================= -->
+
+<section class="cta">
+
+  <div class="container cta-inner">
+
+    <div>
+
+      <h2>
+        Нужен расчёт фасада?
+      </h2>
+
+      <p>
+        Отправьте параметры объекта —
+        обсудим детали в WhatsApp.
+      </p>
+
+    </div>
+
+
+    <a
+      class="btn btn-gold"
+      href="https://wa.me/77088008919"
+      target="_blank"
+      rel="noopener"
+    >
+      Написать в WhatsApp
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     CONTACTS
+========================= -->
+
+<section id="contacts">
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <small>
+        05 / Контакты
+      </small>
+
+      <h2>
+        Свяжитесь с DI.Glass
+      </h2>
+
+    </div>
+
+
+    <div class="contacts-grid">
+
+
+      <div class="contact-card">
+
+        <span>
+          WhatsApp
+        </span>
+
+        <h3>
+
+          <a
+            href="https://wa.me/77088008919"
+            target="_blank"
+            rel="noopener"
+          >
+            +7 708 800 89 19
+          </a>
+
+        </h3>
+
+      </div>
+
+
+      <div class="contact-card">
+
+        <span>
+          Город
+        </span>
+
+        <h3>
+          Алматы
+        </h3>
+
+      </div>
+
+
+      <div class="contact-card">
+
+        <span>
+          Режим работы
+        </span>
+
+        <h3>
+          Пн–Пт · 08:00–20:00
+        </h3>
+
+      </div>
+
+
+      <div class="contact-card">
+
+        <span>
+          Заявки
+        </span>
+
+        <h3>
+          Через WhatsApp
+        </h3>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+</main>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+  <div class="container footer-inner">
+
+    <div>
+      © 2026 DI.Glass
+    </div>
+
+    <div>
+      Фибробетонные фасадные панели · Алматы
+    </div>
+
+  </div>
+
+</footer>
+
+
+<script>
+
+  /* =========================
+     PRICES
+  ========================= */
+
+  const prices = {
+    classic: 2400,
+    wild: 2500,
+    turtle: 2700,
+    "3d": 2800
+  };
+
+
+  /* =========================
+     PANEL NAMES
+  ========================= */
+
+  const names = {
+    classic: "Классика",
+    wild: "Дикий",
+    turtle: "Черепашки",
+    "3d": "3D"
+  };
+
+
+  /* =========================
+     FORMAT NUMBER
+  ========================= */
+
+  function formatNumber(number) {
+
+    return new Intl.NumberFormat("ru-RU")
+      .format(Math.round(number));
+
+  }
+
+
+  /* =========================
+     CALCULATOR
+  ========================= */
+
+  function calculate() {
+
+    const panel =
+      document.getElementById("panel").value;
+
+    const area =
+      parseFloat(
+        document.getElementById("area").value
+      ) || 0;
+
+    const corners =
+      parseInt(
+        document.getElementById("corners").value
+      ) || 0;
+
+    const decorations =
+      parseInt(
+        document.getElementById("decorations").value
+      ) || 0;
+
+    const installation =
+      document.querySelector(
+        'input[name="installation"]:checked'
+      ).value;
+
+
+    const panelCost =
+      area * prices[panel];
+
+    const cornersCost =
+      corners * 1300;
+
+    const decorationsCost =
+      decorations * 750;
+
+
+    const total =
+      panelCost +
+      cornersCost +
+      decorationsCost;
+
+
+    document.getElementById("total")
+      .textContent =
+      formatNumber(total) + " тг";
+
+
+    if (area <= 0) {
+
+      document.getElementById("calculation")
+        .innerHTML =
+        "Укажите площадь для расчёта.";
+
+      return;
+    }
+
+
+    document.getElementById("calculation")
+      .innerHTML = `
+
+        Панели:
+        ${formatNumber(panelCost)} тг
+        <br>
+
+        Угловые:
+        ${formatNumber(cornersCost)} тг
+        <br>
+
+        Оформления:
+        ${formatNumber(decorationsCost)} тг
+        <br>
+
+        Монтаж:
+        ${
+          installation === "Да"
+            ? "требуется, стоимость уточняется"
+            : "не требуется"
+        }
+
+      `;
+
+  }
+
+
+  /* =========================
+     SELECT PANEL
+  ========================= */
+
+  function selectPanel(panel) {
+
+    document.getElementById("panel")
+      .value = panel;
+
+
+    document.getElementById("calculator")
+      .scrollIntoView({
+        behavior: "smooth"
+      });
+
+
+    calculate();
+
+  }
+
+
+  /* =========================
+     WHATSAPP
+  ========================= */
+
+  function sendWhatsApp() {
+
+    const panel =
+      document.getElementById("panel").value;
+
+    const area =
+      parseFloat(
+        document.getElementById("area").value
+      ) || 0;
+
+    const corners =
+      parseInt(
+        document.getElementById("corners").value
+      ) || 0;
+
+    const decorations =
+      parseInt(
+        document.getElementById("decorations").value
+      ) || 0;
+
+    const installation =
+      document.querySelector(
+        'input[name="installation"]:checked'
+      ).value;
+
+
+    const total =
+      area * prices[panel] +
+      corners * 1300 +
+      decorations * 750;
+
+
+    if (area <= 0) {
+
+      alert(
+        "Пожалуйста, укажите площадь фасада."
+      );
+
+      document.getElementById("area").focus();
+
+      return;
+    }
+
+
+    const message =
+
+`Здравствуйте! Хочу получить расчёт фасада DI.Glass.
+
+Панель: ${names[panel]}
+Площадь: ${area} м²
+Угловые элементы: ${corners} шт
+Оформления: ${decorations} шт
+Монтаж: ${installation}
+
+Ориентировочная стоимость материалов:
+${formatNumber(total)} тг
+
+Город: Алматы`;
+
+
+    const url =
+      "https://wa.me/77088008919?text=" +
+      encodeURIComponent(message);
+
+
+    window.open(
+      url,
+      "_blank"
+    );
+
+  }
+
+
+  /* =========================
+     INITIAL CALCULATION
+  ========================= */
+
+  calculate();
+
+</script>
+
+</body>
+</html>
